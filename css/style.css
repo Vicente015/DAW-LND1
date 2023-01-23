@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+:root {
+  --slate-50:  #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+
+  --blue-50:  #EFF6FF;
+  --blue-100: #DBEAFE;
+  --blue-200: #BFDBFE;
+  --blue-300: #93C5FD;
+  --blue-400: #60A5FA;
+  --blue-500: #3B82F6;
+  --blue-600: #2563EB;
+  --blue-700: #1D4ED8;
+  --blue-800: #1E40AF;
+  --blue-900: #1E3A8A;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+body {
+  line-height: 1.75;
+  font-size: 20px;
+  background-color: var(--slate-900);
+
+}
+section,header,footer {
+  padding: 0 20%;
+}
+
+h1,h2 {
+  color: var(--slate-200);
+}
+h3 {
+  color: var(--slate-300);
+}
+h4 {
+  color: var(--slate-400);
+}
+p, li, span {
+  color: var(--slate-300);
+}
+nav .logo {
+  text-align: center;
+  color: var(--blue-600);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 4em;
+  text-decoration: underline wavy;
+}
+nav ul {
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: var(--slate-300);
+}
+nav li {
+  display: inline;
+  font-weight: 500;
+  margin-right: 0.2rem;
+  font-size: 1.3rem;
+}
+nav a:hover {
+  color: var(--slate-200);
+}
+
+header {
+  margin: 5rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeIn 1s;
+}
+.texts h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.texts p {
+  font-size: 1.3rem;
+  max-width: 55ch;
+}
+.canary-flag {
+  width: 1em;
+}
+.boton-redondeado {
+  padding: 4px 8px;
+  background: transparent;
+  color: var(--slate-300);
+  border: solid var(--slate-400) 2px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.boton-redondeado:hover {
+  color: var(--blue-500);
+  border-color: var(--blue-600);
+}
+
+.svg {
+  margin: 1rem;
+}
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+  );
+  gap: 1rem;
+}
+.servicio {
+  padding: 1.3rem;
+  border: 2px solid var(--slate-400);
+  border-radius: 15px;
+}
+.servicio p {
+  font-weight: bold;
+}
+.servicio > img {
+  width: 50px;
+}
+
+.servidores {
+  margin: 2rem auto;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: var(--slate-800);
+}
+.flex-servidores {
+  display: flex;
+  margin: 1rem auto;
+}
+
+/*
+  Tablets and mobile
+*/
+@media (min-width: 320px) and (max-width: 1024px) {
+  .flex-servidores {
+    flex-wrap: wrap !important;
+  }
+}
+
+.servidor {
+  flex: 1 1 100%;
+  border: 2px solid var(--slate-400);
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.servidor ul {
+  padding-left: 1.2rem;
+}
+.servidor .contratar {
+  margin: 0 auto;
+  margin-top: auto;
+  padding-top: 1em;
+  text-align: center;
+}
+
+.img-bg {
+  border-radius: 15px;
+  background-image: url("../imgs/nasa.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid var(--slate-400);
+}
+
+.about .content {
+  padding: 1em;
+}
+
+footer {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+footer p:first-child {
+  color: var(--slate-300);
+}
+footer a, footer p {
+  color: var(--slate-400);
+  display: block;
+}
+footer a:hover {
+  color: var(--slate-500);
+}
+footer div {
+  margin-right: 2rem;
+}
