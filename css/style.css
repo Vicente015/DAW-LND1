@@ -2,6 +2,7 @@
 
 * {
   margin: 0;
+  border: none;
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
 }
@@ -39,7 +40,6 @@ body {
   line-height: 1.75;
   font-size: 20px;
   background-color: var(--slate-900);
-
 }
 section,header,footer {
   padding: 0 20%;
@@ -54,7 +54,7 @@ h3 {
 h4 {
   color: var(--slate-400);
 }
-p, li, span {
+p, li, span, label {
   color: var(--slate-300);
 }
 nav .logo {
@@ -62,7 +62,7 @@ nav .logo {
   color: var(--blue-600);
   font-weight: 700;
   letter-spacing: 1px;
-  font-size: 4em;
+  font-size: 3.4rem;
   text-decoration: underline wavy;
 }
 nav ul {
@@ -77,8 +77,8 @@ a {
 nav li {
   display: inline;
   font-weight: 500;
-  margin-right: 0.2rem;
-  font-size: 1.3rem;
+  padding-right: 0.4rem;
+  font-size: 1.2rem;
 }
 nav a:hover {
   color: var(--slate-200);
@@ -89,7 +89,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  animation: fadeIn 1s;
+  animation: fadeIn 2s;
 }
 .texts h1 {
   font-size: 2rem;
@@ -125,9 +125,10 @@ header {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(150px, 1fr)
+    minmax(12.5rem, 1fr)
   );
   gap: 1rem;
+  padding-bottom: 2rem;
 }
 .servicio {
   padding: 1.3rem;
@@ -142,23 +143,13 @@ header {
 }
 
 .servidores {
-  margin: 2rem auto;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: var(--slate-800);
 }
 .flex-servidores {
   display: flex;
   margin: 1rem auto;
-}
-
-/*
-  Tablets and mobile
-*/
-@media (min-width: 320px) and (max-width: 1024px) {
-  .flex-servidores {
-    flex-wrap: wrap !important;
-  }
 }
 
 .servidor {
@@ -169,6 +160,11 @@ header {
   margin: 1rem;
   display: flex;
   flex-direction: column;
+  transition: transform .2s;
+}
+.servidor:hover {
+  border: 2px solid var(--slate-300);
+  transform: scale(1.02);
 }
 .servidor ul {
   padding-left: 1.2rem;
@@ -176,25 +172,149 @@ header {
 .servidor .contratar {
   margin: 0 auto;
   margin-top: auto;
-  padding-top: 1em;
+  padding-top: 1rem;
   text-align: center;
 }
 
+.imgSlide {
+  display: none;
+}
+.img-slider {
+  position: relative;
+  background-color: var(--slate-700);
+  padding: 2rem 0;
+  transition: 1s ease;
+}
+.img-slider h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--slate-300)
+}
+.img-slider img {
+  margin: auto;
+  display: block;
+  width: 60vw;
+  height: 50vh;
+  border-radius: 20px;
+  border: 4px solid var(--slate-500);
+  background-repeat: no-repeat;
+  background-size: auto;
+  transition: transform .2s;
+}
+.img-slider img:hover {
+  transform: scale(1.04);
+  border: 4px solid var(--slate-400);
+}
+.hidden {
+  display: none !important;
+}
+.slider-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 0.2rem 1rem;
+  margin-top: -22px;
+  color: var(--slate-400);
+  font-weight: bold;
+  font-size: 1.4rem;
+  user-select: none;
+  background-color: var(--slate-800);
+  border-radius: 50%;
+}
+.previous {
+  left: 5%;
+}
+.next {
+  right: 5%;
+}
+.previous:hover, .next:hover {
+  color: var(--slate-300);
+  background-color: var(--slate-600);
+}
+
+.about {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: var(--slate-800);
+}
 .img-bg {
   border-radius: 15px;
-  background-image: url("../imgs/nasa.jpg");
+  background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.3)), url("../imgs/nasa.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   border: 2px solid var(--slate-400);
 }
-
 .about .content {
-  padding: 1em;
+  padding: 1rem;
+}
+
+.vid-bg {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  border: 2px solid var(--slate-400);
+  width: auto;
+}
+
+.vid-bg video {
+  width: 100%;
+  filter: brightness(50%);
+  z-index: -1000;
+}
+.vid-bg .vid-content {
+  position: absolute;
+  top: -20%;
+}
+.vid-bg button {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  background-color: var(--slate-700);
+}
+.form {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.form label {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.form input, .form textarea {
+  color: var(--slate-200);
+  display: block; 
+  background-color: var(--slate-800);
+  border: 2px solid var(--slate-400);
+  border-radius: 5px;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  width: 100%;
+  resize: vertical;
+}
+.form input:focus, .form textarea:focus {
+  outline: none;
+  border: 2px solid var(--slate-300);
+}
+form input[type="submit"] {
+  color: var(--slate-300);
+  background-color: var(--slate-600);
+  border: 2px solid var(--slate-400);
+}
+.form input[type="submit"]:hover {
+  color: var(--slate-100);
+  background-color: var(--slate-500);
+  border: 2px solid var(--slate-300);
 }
 
 footer {
-  margin-top: 3em;
-  margin-bottom: 3em;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -211,4 +331,35 @@ footer a:hover {
 }
 footer div {
   margin-right: 2rem;
+}
+
+/*
+  Tablets and mobile
+*/
+@media (min-width: 320px) and (max-width: 1024px) {
+  .flex-servidores {
+    flex-wrap: wrap !important;
+  }
+  section,header,footer {
+    padding: 0 5%;
+  }
+  footer div {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+  }
+  .hidden {
+    display: block !important;
+  }
+  .img-slider img:not(.hidden) {
+    display: none !important;
+  }
+}
+/*
+  Tablets and mobile
+*/
+@media (min-width: 600px) and (max-width: 900px) {
+  .servidor {
+    flex: 1 0 40% !important;
+  }
 }

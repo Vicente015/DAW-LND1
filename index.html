@@ -11,27 +11,26 @@
     <nav>
         <p class="logo">Chaparrón</p>
         <ul class="elementos">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Precios</a></li>
-            <li><a href="#">Servidores</a></li>
-            <li><a href="#">Novedades</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#header">Inicio</a></li>
+            <li><a href="#servidores">Servidores</a></li>
+            <li><a href="#instalaciones">Instalaciones</a></li>
+            <li><a href="#about">Contacto</a></li>
         </ul>
     </nav>
-    <header>
+    <header id="header">
         <div class="texts">
             <h1>
-                Líder en computación cloud en Canarias
+                Líder en servidores en la nube en Canarias
                 <img class="canary-flag" src="imgs/flag-canary.png" alt="canary islands flag">
             </h1>
             <p>Somos los líderes en computación gourmet de alto rendimiento y calidad.</p>
-            <a href="#precios" class="boton-redondeado">Ver precios</a>
+            <a href="#servidores" class="boton-redondeado">Ver precios</a>
         </div>
         <div class="svg">
             <img src="imgs/undraw_server_cluster_jwwq.png" alt="icono cloud">
         </div>
     </header>
-    <section class="servicios">
+    <section class="servicios" id="servicios">
         <div class="servicio">
             <img src="svgs/server-solid.svg" alt="servicio1">
             <p>Servicios en la nube</p>
@@ -44,6 +43,10 @@
             <img src="svgs/network-wired-solid.svg" alt="servicio3">
             <p>Red de alta capacidad</p>
         </div>
+        <div class="servicio">
+            <img src="svgs/money-bill-wave-solid.svg" alt="servicio3">
+            <p>Precios asequibles</p>
+        </div>
     </section>
     <section class="servidores" id="servidores">
         <h2>Servidores</h2>
@@ -52,7 +55,7 @@
         <div class="flex-servidores">
             <div class="servidor">
                 <h3>Starter</h3>
-                <p>Los servidores más asequibles, ideales para pequeñas empresas que buscan una solución económica.</p>
+                <p>Los servidores más asequibles, ideales para pequeñas empresas.</p>
                 <ul>
                     <li>1 vCore</li>
                     <li>2 GB</li>
@@ -60,7 +63,7 @@
                     <li>100 Mb/s tráfico ilimitado</li>
                 </ul>
                 <div class="contratar">
-                    <a href="#" class="boton-redondeado">Contratar</a>
+                    <a href="#contact" class="boton-redondeado">Contratar</a>
                 </div>
             </div>
             <div class="servidor">
@@ -73,7 +76,7 @@
                     <li>100 Mb/s tráfico ilimitado</li>
                 </ul>
                 <div class="contratar">
-                    <a href="#" class="boton-redondeado">Contratar</a>
+                    <a href="#contact" class="boton-redondeado">Contratar</a>
                 </div>
             </div>
             <div class="servidor">
@@ -86,18 +89,54 @@
                     <li>100 Mb/s tráfico ilimitado</li>
                 </ul>
                 <div class="contratar">
-                    <a href="#" class="boton-redondeado">Contratar</a>
+                    <a href="#contact" class="boton-redondeado">Contratar</a>
                 </div>
             </div>
         </div>
     </section>
-    <section class="about">
+    <section class="img-slider" id="instalaciones">
+        <h2>Nuestras instalaciones</h2>
+        <div class="imgSlide">
+            <img src="./imgs/slider/img1.jpg" alt="Img1">
+            <img class="hidden" src="./imgs/slider/img1-chiquita.jpg" alt="img1-chiquita">
+        </div>
+        <div class="imgSlide">
+            <img src="./imgs/slider/img2.jpg" alt="Img2">
+            <img class="hidden" src="./imgs/slider/img2-chiquita.jpg" alt="img2-chiquita">
+        </div>
+        <div class="imgSlide">
+            <img src="./imgs/slider/img3.jpg" alt="Img3">
+            <img class="hidden" src="./imgs/slider/img3-chiquita.jpg" alt="img3-chiquita">
+        </div>
+        <a class="slider-btn previous" onmousedown="setSlides(-1)"><</a>
+        <a class="slider-btn next" onmousedown="setSlides(1)">></a>
+    </section>
+    <section class="about" id="about">
         <div class="img-bg">
             <div class="content">
                 <h2>Sobre nosotros</h2>
                 <p>Chaparrón es una empresa canaria fundada en 2022 que se dedica al alojamiento en la nube. Ofrecemos una amplia variedad de servicios en la nube, desde servidores básicos hasta soluciones avanzadas y personalizadas. Nuestra tecnología de última generación garantiza un servicio de alta disponibilidad y escalabilidad, para que puedas alojar tus proyectos con total confianza. Además, contamos con un equipo de expertos en cloud que te ayudarán en todo momento a sacar el máximo rendimiento a tu infraestructura. En Chaparrón nos enorgullecemos de ofrecer un servicio de calidad, con un servicio de atención al cliente excepcional, y una gran seguridad en todas nuestras soluciones. Si buscas una empresa confiable y con amplia experiencia en el sector, Chaparrón es tu mejor opción.</p>
             </div>
         </div>
+        <div class="vid-bg">
+            <video autoplay muted loop id="video" src="./imgs/video.mp4">
+            </video>
+            <div class="vid-content">
+                <button>Formar parte del equipo</button>
+            </div>
+
+        </div>
+    </section>
+    <section class="form" id ="contact">
+        <h2>Contacto</h2>
+        <p>Póngase en contacto con nuestro departamento de servicio técnico mediante este formulario.</p>
+        <form action="" method="post">
+            <label for="subject">Asunto</label>
+            <input type="text" id="subject" name="subject" placeholder="Escriba aquí el asunto">
+            <label for="content">Contenido</label>
+            <textarea type="text" id="content" name="content" placeholder="Escriba aquí el contenido"></textarea>
+            <input type="submit" value="Enviar">
+        </form>
     </section>
     <footer>
         <div class="izq">
@@ -110,5 +149,6 @@
             <a href="#">Trabaja con nosotros</a>
         </div>
     </div>
+    <script src="js/slider.js"></script>
 </body>
 </html>
